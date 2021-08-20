@@ -3,9 +3,24 @@ GET http://localhost:3000/
 
 ### Crear una nueva tarea
 POST http://localhost:3000/tasks
-Content-Type: "application/json"
+Content-Type: application/json
 
 {
     "title": "Tarea 1",
     "detail": "Detalle de la tarea 1"
 }
+###Tener lista
+GET http://localhost:3000/tasks
+
+###Tener lista por id 1
+GET http://localhost:3000/tasks/1
+###Eli,inar
+DELETE http://localhost:3000/tasks/2
+
+
+###Completado
+PUT http://localhost:3000/tasks/1?status=completado
+
+
+### Pendiente
+PUT http://localhost:3000/tasks/1?status=pendiente
