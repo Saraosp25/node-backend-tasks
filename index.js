@@ -51,18 +51,30 @@ app.delete("/tasks/:id", (req, res, next) => {
 app.put("/tasks/:id", jsonParser, (req, res, next) => {
     var state = req.query.status;
     var id = req.params.id
-    
-    
+    if(state==="editar"){
+        const s = tasks.find(ele => ele.id == req.params.id);
+        s.title=req.body.title;
+        s.detail=req.body.detail;
+
+
+        if(s){
+            res.json(tasks);
+        }else{
+            res.status(404).json({
+                message:"error"
+            });
+        }
+    }
     if(state==="pendiente"){
         const s = tasks.findIndex(ele => ele.id == id);
-        tasks[s].status = state
+        tasks[s].status = state;
         res.status(200).json({
             message: "Completado",
             object: tasks[s]
         });
     }if(state==="completado"){
         const s = tasks.findIndex(ele => ele.id == id);
-        tasks[s].status = state
+        tasks[s].status = state;
         res.status(200).json({
             message: "Pendiente",
             object: tasks[s]
