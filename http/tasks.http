@@ -17,6 +17,17 @@ GET http://localhost:3000/tasks/1
 ###Eli,inar
 DELETE http://localhost:3000/tasks/2
 
+###editar tareas
+
+PUT http://localhost:3000/tasks/1?status=editar
+Content-Type: application/json
+
+
+{
+    "title": "Tarea Modifica 1",
+    "detail": "Detalle de la tarea moduitrof 1"
+}
+
 
 ###Completado
 PUT http://localhost:3000/tasks/1?status=completado
