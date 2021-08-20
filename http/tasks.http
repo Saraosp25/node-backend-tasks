@@ -14,7 +14,7 @@ GET http://localhost:3000/tasks
 
 ###Tener lista por id 1
 GET http://localhost:3000/tasks/1
-###Eli,inar
+###Eliminar
 DELETE http://localhost:3000/tasks/2
 
 ###editar tareas
