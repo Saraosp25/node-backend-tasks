@@ -54,14 +54,14 @@ app.put("/tasks/:id", jsonParser, (req, res, next) => {
     
     
     if(state==="pendiente"){
-        const s = tasks.findIndex(o => o.id == id);
+        const s = tasks.findIndex(ele => ele.id == id);
         tasks[s].status = state
         res.status(200).json({
             message: "Completado",
             object: tasks[s]
         });
     }if(state==="completado"){
-        const s = tasks.findIndex(o => o.id == id);
+        const s = tasks.findIndex(ele => ele.id == id);
         tasks[s].status = state
         res.status(200).json({
             message: "Pendiente",
